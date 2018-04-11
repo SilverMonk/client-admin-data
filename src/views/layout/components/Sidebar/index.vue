@@ -19,7 +19,7 @@ export default {
       return this.$router.options.routes;
     },
     isCollapse() {
-      return !this.sidebar.opened;
+      return false && !this.sidebar.opened;
     }
   }
 };

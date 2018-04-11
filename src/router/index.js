@@ -44,36 +44,57 @@ export const constantRouterMap = [
   },
 
   {
-    path: '/example',
+    path: '/project',
     component: Layout,
-    redirect: '/example/table',
-    name: 'Example',
-    meta: { title: 'Example', icon: 'example' },
+    redirect: '/project/index',
+    name: 'Project',
+    meta: { title: '计划', icon: 'example' },
     children: [
       {
-        path: 'table',
-        name: 'Table',
-        component: () => import('@/views/table/index'),
-        meta: { title: 'Table', icon: 'table' }
+        path: 'list',
+        name: 'List',
+        component: () => import('@/views/project/index'),
+        meta: { title: '项目', icon: 'table' }
       },
       {
-        path: 'tree',
-        name: 'Tree',
-        component: () => import('@/views/tree/index'),
-        meta: { title: 'Tree', icon: 'tree' }
+        path: 'add',
+        name: 'Add',
+        component: () => import('@/views/project/detail'),
+        meta: { title: '新建', icon: 'example' }
       }
     ]
   },
 
   {
-    path: '/form',
+    path: '/product',
     component: Layout,
     children: [
       {
         path: 'index',
-        name: 'Form',
-        component: () => import('@/views/form/index'),
-        meta: { title: 'Form', icon: 'form' }
+        name: 'Product',
+        component: () => import('@/views/product/index'),
+        meta: { title: '产品', icon: 'form' }
+      }
+    ]
+  },
+  {
+    path: '/plan',
+    component: Layout,
+    redirect: '/plan/list',
+    name: 'Plan',
+    meta: { title: '计划', icon: 'example' },
+    children: [
+      {
+        path: 'index',
+        name: 'Budget',
+        component: () => import('@/views/budget/index'),
+        meta: { title: '报价单', icon: 'form' }
+      },
+      {
+        path: 'group',
+        name: 'Group',
+        component: () => import('@/views/budget/group'),
+        meta: { title: '分组', icon: 'tree' }
       }
     ]
   },
